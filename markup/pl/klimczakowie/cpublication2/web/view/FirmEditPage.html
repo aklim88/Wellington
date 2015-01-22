@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wicket:extend xmlns:wicket="http://wicket.apache.org">
+	<div id="feedbackPanel">
+		<span wicket:id="feedback" />
+	</div>
+	<div class="modalPage">
+		<form wicket:id="inputForm" id="inputForm" class="inputForm">
+
+			<table class="dataview">
+
+				<tr>
+
+					<td colspan="2"><H4> <span wicket:id="name" id="name"
+							type="text" /></H4></td>
+				</tr>
+			
+				<tr>
+					<td>Street:</td>
+					<td><input wicket:id="street" id="street" type="text"
+						size="60" /></td>
+				</tr>
+				<tr>
+					<td>City:</td>
+					<td><input wicket:id="postCode" id="postCode" type="text"
+						size="8" /><input wicket:id="city" id="city" type="text"
+						size="49" /></td>
+				</tr>
+				<tr>
+					<td>Country:</td>
+					<td><select wicket:id="country"></select></td>
+				</tr>
+				<tr>
+					<td>Phone:</td>
+					<td><input wicket:id="phone" id="phone" type="text" size="60" />
+					</td>
+				</tr>
+				<tr>
+					<td>Fax:</td>
+					<td><input wicket:id="fax" id="fax" type="text" size="60" />
+					</td>
+				</tr>
+				<tr>
+					<td>Homepage:</td>
+					<td><input wicket:id="homepage" id="homepage" type="text"
+						size="60" /></td>
+				</tr>
+				<tr>
+					<td>Contact E-Mail:</td>
+					<td><input wicket:id="email" id="email" type="text" size="60" />
+					</td>
+				</tr>
+				<tr>
+					<td>Branch:</td>
+					<td><select wicket:id="category"></select></td>
+				</tr>
+
+
+				<tr>
+					<td colspan="2">Description:</td>
+				</tr>
+				<tr>
+
+					<td colspan="2"><textarea wicket:id="description" rows="6"
+							cols="80"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2"><img wicket:id="image.logo" width="128px"
+						height="128px" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input wicket:id="logo.logo" type="file" /></td>
+				</tr>
+
+			</table>
+
+			<br/>
+			<table class="dataview">
+
+				<tr>
+					<td colspan="2">
+						<button class="button" type="submit" wicket:id="saveButton">Publish</button>
+					</td>
+				</tr>
+			</table>
+			
+		</form>
+
+	</div>
+
+</wicket:extend>

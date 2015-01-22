@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features>
+
+<!-- 
+    Usage:
+    features:addurl mvn:pl.klimczakowie.java.cpublication2/cpublication2-features/${pom.version}/xml/features
+ -->
+
+    <repository>mvn:org.ops4j.pax.wicket/paxwicket/${pax-wicket.version}/xml/features</repository>
+    <repository>mvn:org.ops4j.pax.wicket/features/${pax-wicket.version}/xml/features</repository>
+    <repository>mvn:org.apache.camel.karaf/apache-camel/${camel.version}/xml/features</repository>
+
+    <feature name='karaf-jpa-deps' version='${pom.version}' resolver='(obr)'>
+        <feature>jndi</feature>
+        <feature>jpa</feature>
+
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-annotation_1.0_spec/1.1.1</bundle>
+        <bundle>mvn:org.apache.geronimo.specs/geronimo-el_1.0_spec/1.0.1</bundle>
+        <bundle>mvn:commons-lang/commons-lang/2.6</bundle>
+        <bundle>mvn:commons-collections/commons-collections/3.2.1</bundle>
+        <bundle>mvn:commons-pool/commons-pool/1.6</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/1.4_3</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ant/1.7.0_6</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.serp/1.13.1_4</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.asm/3.3.1_1</bundle>
+        <bundle>mvn:org.apache.openjpa/openjpa/${openjpa.version}</bundle>
+
+        <!-- Added as a temporary driver for testing purpose only until DI will decide which DB to use for session persistence -->
+        <bundle>mvn:org.mariadb.jdbc/mariadb-java-client/1.1.7</bundle>
+        <bundle>mvn:mysql/mysql-connector-java/5.1.34</bundle>
+    </feature>
+
+    <feature name='cpublication2-deps' version='${pom.version}' resolver='(obr)'>
+        <feature>transaction</feature>
+        <feature>karaf-jpa-deps</feature>
+        <feature>pax-wicket</feature>
+        <feature>pax-wicket-blueprint</feature>
+        <feature>camel-bindy</feature>
+        <feature>camel-velocity</feature>
+        <feature>camel-mail</feature>
+        <feature>camel-blueprint</feature>
+        <feature>spring-jdbc</feature>
+        <feature>spring-orm</feature>
+
+        <bundle>mvn:joda-time/joda-time/${joda-time.version}</bundle>
+
+        <bundle>mvn:org.apache.wicket/wicket-ioc/${wicket.version}</bundle>
+        <bundle>mvn:org.apache.wicket/wicket-datetime/${wicket.version}</bundle>
+
+        <bundle>mvn:pl.klimczakowie.java.cpublication2/cpublication2-domain/${pom.version}</bundle>
+        <bundle>mvn:pl.klimczakowie.java.cpublication2/cpublication2-persistence/${pom.version}</bundle>
+    </feature>
+
+    <feature name='cpublication2' version='${pom.version}' resolver='(obr)'>
+        <feature>karaf-jpa-deps</feature>
+        <feature>cpublication2-deps</feature>
+
+        <bundle>mvn:pl.klimczakowie.java.cpublication2/cpublication2-web/${pom.version}</bundle>
+    </feature>
+
+</features>

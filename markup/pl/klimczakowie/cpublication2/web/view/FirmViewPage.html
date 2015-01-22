@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wicket:extend xmlns:wicket="http://wicket.apache.org">
+
+	<div class="modalPage">
+		<form wicket:id="inputForm" id="inputForm" class="inputForm">
+			<table class="dataview">
+				<tr>	
+					<TD>
+						<img wicket:id="logo.logo" width="100px" height="100px" />
+					</TD>
+					<td colspan="2"><H4> <span wicket:id="name" id="name" type="text" /></H4></td>
+				</TR>
+			</table>
+			<br />
+			<table class="dataview">
+				<tr>
+					<td><i>Street:</i></td>
+					<td><strong><span wicket:id="street" /></strong></td>
+				</tr>
+				<tr>
+					<td><i>City:</i></td>
+					<td><strong><span wicket:id="postCode" /> <span
+							wicket:id="city" /></strong></td>
+				</tr>
+				<tr>
+					<td><i>Country:</i></td>
+					<td><strong><span wicket:id="country" /></strong></td>
+				</tr>
+				<tr>
+					<td><i>Phone:</i></td>
+					<td><strong><span wicket:id="phone" /></strong></td>
+				</tr>
+				<tr>
+					<td><i>Fax:</i></td>
+					<td><strong><span wicket:id="fax" /></strong></td>
+				</tr>
+				<tr>
+					<td><i>Homepage:</i></td>
+					<td><strong><span wicket:id="homepage" /></strong></td>
+				</tr>
+				<tr>
+					<td><i>Contact email:</i></td>
+					<td><strong><span wicket:id="email" /></strong></td>
+				</tr>
+				<tr>
+					<td><i>Description:</i></td>
+					<td><strong><span wicket:id="descriptionBRed" /></strong></td>
+				</tr>
+				<tr>
+					<td colspan="2">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="2">Directions:</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<img wicket:id="map" alt="directions" width="550px" />
+					</td>
+				</tr>
+			</table>
+			<INPUT class="button" type="button" wicket:id="exitButton" value=" Back " />
+		</form>
+		<div id="feedbackPanel">
+			<span wicket:id="feedback" />
+		</div>
+	</div>
+
+</wicket:extend>

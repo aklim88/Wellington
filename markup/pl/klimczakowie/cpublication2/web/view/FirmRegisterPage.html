@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wicket:extend xmlns:wicket="http://wicket.apache.org">
+    <!--<div id="feedbackPanel">-->
+    <span wicket:id="feedback" />
+    <!--    </div>
+            <div class="modalPage">-->
+    <h4>Register Form</h4>
+    <form wicket:id="inputForm" >
+
+        <table border="0" width="600px">
+
+            <tr>
+                <td>Login:</td>
+                <td><input wicket:id="login" id="login" type="text" size="20" />
+                </td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input wicket:id="passwd" type="password" size="20" /></td>
+            </tr>
+            <tr>
+                <td>Retype password:</td>
+                <td><input wicket:id="confirmpassword" type="password"
+                           size="20" /></td>
+            </tr>
+            <tr>
+                <td>Company name:</td>
+                <td><input wicket:id="name" id="name" type="text" size="60" /></td>
+            </tr>
+            <tr>
+                <td>Street:</td>
+                <td><input wicket:id="street" id="street" type="text"
+                           size="60" /></td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td><input wicket:id="postCode" id="postCode" type="text"
+                           size="8" /><input wicket:id="city" id="city" type="text"
+                           size="49" /></td>
+            </tr>
+            <tr>
+                <td>Country:</td>
+                <td><select wicket:id="country"></select></td>
+            </tr>
+            <tr>
+                <td>Phone:</td>
+                <td><input wicket:id="phone" id="phone" type="text" size="60" />
+                </td>
+            </tr>
+            <tr>
+                <td>Fax:</td>
+                <td><input wicket:id="fax" id="fax" type="text" size="60" />
+                </td>
+            </tr>
+            <tr>
+                <td>Homepage:</td>
+                <td><input wicket:id="homepage" id="homepage" type="text"
+                           size="60" /></td>
+            </tr>
+            <tr>
+                <td>Contact E-Mail:</td>
+                <td><input wicket:id="email" id="email" type="text" size="60" />
+                </td>
+            </tr>
+            <tr>
+                <td>Branch:</td>
+                <td><select wicket:id="category"></select></td>
+            </tr>
+
+
+            <tr>
+                <td>Description:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><textarea wicket:id="description" rows="6" cols="58"></textarea></td>
+
+            </tr>
+
+            <tr>
+                <td colspan="2"><input  wicket:id="logo.logo" type="file" /></td>
+
+            </tr>
+
+        </table>
+        
+        <table border="0">
+
+            <tr>
+                <td colspan="2">
+
+                    <button class="button" type="submit" wicket:id="saveButton">Publish</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <!--</div>-->
+
+</wicket:extend>

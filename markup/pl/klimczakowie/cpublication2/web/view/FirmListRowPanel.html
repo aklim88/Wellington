@@ -1,0 +1,40 @@
+<wicket:panel>
+
+    <a href="#" wicket:id="select">
+
+
+        <table class ="dataview" width="600px">
+            <br/>
+            <tr>
+                <td class="company"  colspan="3"><strong><span  wicket:id="company_name"/></strong></td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+                <TD rowspan="5" align="right"><img wicket:id="logo.logo" width="90px" height="90px" /></TD>
+            </tr>
+
+            <tr>
+                <td width="130px" ><i>City:</i></td>
+                <td><strong><span wicket:id="post_code" /> <span wicket:id="city" /></strong></td>
+
+            </tr>
+            <tr>
+                <td width="130px"><i>Country:</i></td>
+                <td><strong><span wicket:id="country" /></strong></td>
+
+            </tr>
+            <tr>    
+                <td width="130px"><i>Street:</i></td>
+                <td><strong><span wicket:id="company_street" /></strong></td>
+
+            </tr> 
+        </table>
+
+        <div wicket:id="modal"></div>
+        <div id="feedbackPanel">
+            <span wicket:id="feedback" />
+        </div>
+
+    </a>
+
+</wicket:panel>

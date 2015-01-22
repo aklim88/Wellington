@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>cpublication2</artifactId>
+        <groupId>pl.klimczakowie.java</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>pl.klimczakowie.java.cpublication2</groupId>
+    <artifactId>cpublication2-persistence</artifactId>
+    <packaging>bundle</packaging>
+    <description>Fuse ESB ${smx.version} Persistence Project</description>
+    <name>${project.name} :: ${project.artifactId}</name>
+
+    <developers>
+        <developer>
+           <name>Agnieszka Klimczak</name>
+            <roles>
+                <role>Designer</role>
+                <role>Programmer</role>
+            </roles>
+            <organization>Klimczakowie.pl</organization>
+        </developer>
+    </developers>
+
+    <properties>
+        <bundle.symbolicName>${project.groupId}.${project.artifactId}</bundle.symbolicName>
+
+        <bundle.namespace>${project.groupId}.${project.artifactId}</bundle.namespace>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.openjpa</groupId>
+            <artifactId>openjpa</artifactId>
+            <version>${openjpa.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pl.klimczakowie.java.cpublication2</groupId>
+            <artifactId>cpublication2-domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+
+            <resource>
+                <directory>.</directory>
+                <includes>
+                    <include>plugin.xml</include>
+                    <include>plugin.properties</include>
+                    <include>icons/**</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <!-- to compile with 1.6 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${bundle.symbolicName}</Bundle-SymbolicName>
+                        <Bundle-Version>${project.version}</Bundle-Version>
+
+                        <Export-Package>
+                            pl.klimczakowie.cpublication2.persistence;version="${project.version}",
+                        </Export-Package>
+
+                        <Private-Package>
+                            pl.klimczakowie.cpublication2.persistence.impl,
+                        </Private-Package>
+
+                        <Import-Package>
+                            pl.klimczakowie.cpublication2.model;version="${project.version}",
+
+                            org.slf4j,
+
+                            org.aopalliance.aop,
+                            org.springframework.jdbc.core, 
+                            org.springframework.jdbc.object, 
+
+                            org.springframework.beans.factory.annotation,
+                            org.springframework.beans.factory.support,
+                            org.springframework.beans.factory.xml,
+                            org.springframework.aop,
+                            org.springframework.aop.framework,
+                            org.springframework.aop.framework.autoproxy,
+                            org.springframework.aop.support,
+                            org.springframework.instrument.classloading,
+                            org.springframework.stereotype,
+                            org.springframework.dao.annotation,
+                            org.springframework.transaction,
+                            org.springframework.transaction.annotation,
+                            org.springframework.transaction.interceptor,
+                            org.springframework.transaction.support,
+                            org.springframework.transaction.jta,
+                            org.springframework.orm.jpa,
+                            org.springframework.orm.jpa.persistenceunit,
+                            org.springframework.orm.jpa.support,
+                            org.springframework.orm.jpa.vendor,
+                            org.springframework.jdbc.support,
+                            org.springframework.jdbc.datasource,
+                            org.springframework.dao,
+                            org.springframework.dao.support,
+
+                            javax.persistence;version="[2,3)",
+                            javax.persistence.criteria,
+                            javax.persistence.metamodel,
+                            javax.persistence.spi,
+                            javax.transaction,
+                            javax.sql,
+
+                            serp.util,
+
+                            org.apache.camel.spi,
+                            org.apache.camel,
+
+                            org.apache.commons.dbcp,
+                            org.apache.commons.dbcp.managed,
+
+                            org.apache.openjpa.enhance,
+                            org.apache.openjpa.util,
+                            
+                            org.mariadb.jdbc;resolution:=optional,
+                            com.mysql.jdbc;resolution:=optional,
+
+                        </Import-Package>
+                        <Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
+                        <_include>-osgi.bnd</_include>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,65 @@
+<wicket:extend xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="en" />
+        <link href="internal/style.css" rel="stylesheet" type="text/css" />
+        <title wicket:id="pageTitle"/>
+
+        <link rel="stylesheet" type="text/css" href="internal/main.css"/> 
+        <link rel="stylesheet" type="text/css" href="internal/white.css"/>
+        <script type="text/javascript" src="internal/support-opt-in.js"></script>
+        <script type="text/javascript" src="internal/require-opt-in.js" read_more="/wicket/bookmarkable/pl.klimczakowie.cpublication2.web.view.TermsPage"></script> 
+        <script type='text/javascript'> HI.optInCookies.disagreeURL = "https://www.google.com";</script> 
+
+        <style>.hi-cookie-power {visibility:hidden;}
+        </style>
+
+    </head>
+    <body>
+        <div id="main">
+            <div id="header">
+                <div id="logo">
+                    <h1><a href="#"wicket:id="homepage">Wellington Publication S.L.</a></h1>
+
+                </div>
+                <div id="menu"><div id="menu2">
+                        <ul>
+                            <li><a  href="#" wicket:id="homepage">Home</a></li>     
+                            <li><a  href="#" wicket:id="searchpage">Search</a></li>
+                            <!--<li><a href="#" wicket:id="firmListPage">Firms List</a></li>-->
+                            <li><a href="#" wicket:id="login"> Login </a></li>
+                            <li><a href="#" wicket:id="registerPage"> Register </a></li>
+                            <li><a href="#" wicket:id="myPage">My Firm</a></li>
+                            <li><a href="#" wicket:id="logout"> Logout </a></li>
+                        </ul>
+                    </div></div> 
+            </div>
+            <div id="middle">
+                <div id="left">
+                    <div class="box">
+                        <wicket:child />
+                    </div></div>
+                <div id="sidebar">
+
+                    <div class="boximg"><a  href="#" wicket:id="contactpage"><img src="internal/img3.jpg" alt="" /></a>
+                        <h3><a  href="#" wicket:id="contactpage">Contact</a></h3>
+                    </div>
+                    <div class="boximg"><a  href="#" wicket:id="termspage"><img src="internal/img4.jpg" alt="" /></a>
+                        <h3> <a  href="#" wicket:id="termspage">Terms & Condition</a></h3>
+                    </div>
+                </div>
+            </div>
+
+            <div id="menubottom"><div id="menu2">
+                    <ul>
+                        <li><a  href="#" wicket:id="termspage">Terms & Condition</a></li>     
+                        <li><a  href="#" wicket:id="contactpage">Contact</a></li>
+                    </ul>
+                    <div class="clearing">&nbsp;</div>
+                </div></div>
+            <div id="footer"></div>
+        </div>
+    </body>
+</wicket:extend>

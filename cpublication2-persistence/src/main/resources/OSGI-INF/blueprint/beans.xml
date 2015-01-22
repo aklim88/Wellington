@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0"
+    xmlns:tx="http://aries.apache.org/xmlns/transactions/v1.1.0"
+    xmlns:jpa="http://aries.apache.org/xmlns/jpa/v1.1.0"
+    xsi:schemaLocation="
+       http://www.osgi.org/xmlns/blueprint/v1.0.0 
+       http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+       http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0
+       http://aries.apache.org/schemas/blueprint-cm/blueprint-cm-1.0.0.xsd
+       http://aries.apache.org/xmlns/transactions/v1.1.0
+       http://aries.apache.org/schemas/transaction/transactionv11.xsd
+       http://aries.apache.org/xmlns/jpa/v1.1.0
+       http://aries.apache.org/schemas/jpa/jpa_110.xsd">
+
+    <reference id="transactionManager" interface="javax.transaction.TransactionManager"/>
+
+    <!-- BEANS -->
+    <bean id="cpublication2Service" class="pl.klimczakowie.cpublication2.persistence.impl.Cpublication2ServiceImpl" init-method="init">
+        <tx:transaction method="*" value="Required"/>
+        <jpa:context property="entityManager" unitname="cpublication2-persistence" />
+    </bean>
+
+    <!-- DataSource Definition -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.managed.BasicManagedDataSource" destroy-method="close" >
+        <cm:managed-properties persistent-id="pl.klimczakowie.cpublication2.persistence" />
+        <property name="driverClassName" value="" />
+        <property name="url" value="" />
+        <property name="username" value="" />
+        <property name="password" value="" />
+        <property name="validationQuery" value="" />
+        <property name="validationQueryTimeout" value="5" />
+        <property name="maxActive" value="8" />
+        <property name="maxIdle" value="8" />
+        <property name="minIdle" value="0" />
+        <property name="maxWait" value="30" />
+        <property name="testOnBorrow" value="true" />
+        <property name="testOnReturn" value="true" />
+        <property name="testWhileIdle" value="true" />
+        <property name="transactionManager" ref="transactionManager" />
+    </bean>
+
+	<service ref="cpublication2Service" interface="pl.klimczakowie.cpublication2.persistence.Cpublication2Service" />
+
+    <service ref="dataSource" interface="javax.sql.DataSource">
+       <service-properties>
+         <entry key="osgi.jndi.service.name" value="jdbc/cpublication2"/>
+       </service-properties>
+    </service>
+</blueprint>

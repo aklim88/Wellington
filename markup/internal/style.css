@@ -1,0 +1,910 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.img12{
+    
+        background: url("http://www.heartinternet.co.uk/eu-cookie/hi-cookie-sprite.png") no-repeat scroll 0 -10px transparent;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 13px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #7E7D62;
+    background: #FDFDEE  repeat-x;
+}
+
+h1, h2 {
+    font-weight: normal;
+}
+
+h1 {
+    position: absolute;
+    top: 0px;
+    left: 1px;
+    padding: 0 15px;
+    font: 34px/50px Arial, Helvetica, sans-serif;
+    color: White;
+    background: #91ABC6 url(h1.jpg) no-repeat;
+}
+
+h1 a, h1 a:hover {
+    color: White;
+    text-decoration: none;
+}
+
+h2 {
+    position: absolute;
+    top: 20px;
+    right: 1px;
+    padding: 0 15px;
+    font: 11px/30px Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: White;
+    background: #91ABC6 url(h2.jpg) no-repeat right;
+}
+
+h3 {
+    color: #07233A;
+    padding-bottom:10px;
+}
+
+h3 span {
+    color: #9CB6CE;
+}
+
+h4 {
+    text-align: left;
+    padding-bottom: 10px;
+    font: 30px Arial, Helvetica, sans-serif; 
+}
+
+p {
+    padding: 10px 0;
+    line-height: 2em;
+}
+
+a {
+    cursor: pointer;
+    color: #1A6E9D;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #1A6E9D;
+    cursor: pointer;
+}
+
+.imgPencil {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    padding-left: 5px;
+    margin: 0px;
+    float: none;
+}
+
+#main {
+    position: relative;
+    margin: 0 auto;
+    width: 900px;
+    text-align: left;
+}
+
+#header {
+    height: 275px;
+    background: #233D53 ;
+}
+
+em {
+    font-style: normal;
+}
+#heading td{
+    width:20px;
+}
+
+#logo {
+    padding-top: 0px;
+    height: 220px;
+    background: url(img1.jpg);
+    border-left: 1px solid #3C6787;
+    border-right: 1px solid #3C6787;
+}
+
+#menu {
+    padding: 0 1px;
+    height: 55px;
+    background: url(menu.gif) repeat-x;
+}
+
+#menu2 {
+    height: 55px;
+    font: 20px/33px Arial, Helvetica, sans-serif;
+
+}
+#menu2 em {
+    height: 55px;
+    font: 20px/33px Arial, Helvetica, sans-serif;
+    font-style: normal;
+
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0 12px;
+    font-style: normal;
+}
+
+#menu ul li {
+    display: block;
+    float: left;
+    padding: 11px 1px;
+    /*text-align: center;*/
+}
+
+#menu ul li a {
+    display: block;
+    float: left;
+    padding: 0 30px;
+    font: 20px/33px Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: White;
+
+}
+
+#menu ul li a.active, #menu ul li a:hover {
+    text-decoration: none;
+    background: #145986 url(menu_over.gif) repeat-x;
+}
+
+#menu em{
+    padding: 0 40px;
+    list-style: none;
+    font-style: normal;
+}
+
+#search {
+    position: absolute;
+    top: 237px;
+    right: 15px;
+    width: 260px;
+}
+
+#search input.text {
+    float: left;
+    display: block;
+    padding: 3px;
+    width: 200px;
+    font-size: 13px;
+    color: #9CC2E8;
+    background: #3A5469;
+    border: none;
+    border-right: 1px solid #0E3958;
+    border-bottom: 1px solid #0E3958;
+}
+
+#search input.submit {
+    float: right;
+    display: block;
+    padding: 3px 0;
+    width: 40px;
+    font-size: 13px;
+    color: #07233A;
+    background: #768A9D url(submit.gif) repeat-x;
+    border: none;
+    cursor: pointer;
+}
+
+#middle {
+    padding: 30px 5px ;
+    min-height: 600px ;
+}
+
+
+#middle h3 {
+    font: normal 26px Georgia, Times, serif;
+}
+
+#left {
+    float: left;
+    width: 620px;
+}
+
+#left .box {
+    padding: 10px 0 10px 0;
+    clear: both;
+}
+
+#left h3 {
+    font: normal 26px Georgia, Times, serif;
+}
+
+.leftImg {
+    float: left;
+    margin: 15px 40px 30px 0;
+}
+
+
+#sidebar {
+    float: right;
+    margin-bottom: 60px;
+    padding-left: 10px;
+    width: 220px;
+    border-left: 1px solid #ECECDE;
+}
+
+#sidebar h3 {
+    font-size: 14px;
+    padding-top:40px;
+}
+
+#sidebar p {
+    line-height: 1.5em;
+}
+
+.boximg {
+    padding: 20px 0 0 0;
+    clear: both;
+}
+
+
+#sidebar img {
+    float: left;
+    margin: 15px 10px 0 0;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 20px 0 50px 0;
+}
+
+#sidebar ul.lastul {
+    padding-bottom: 0;
+}
+
+#sidebar ul li {
+    padding: 0 0 0 10px;
+    line-height: 2em;
+    color: #1A6E9D;
+}
+
+#sidebar ul li a {
+    padding: 0 0 0 8px;
+}
+
+#menubottom {
+    clear: both;
+    padding: 0 1px;
+    height: 55px;
+    background: url(menu.gif) repeat-x;
+}
+
+#menubottom ul {
+    list-style: none;
+    padding: 0 120px;
+    font-style: normal;
+}
+
+#menubottom em {
+    list-style: none;
+    padding: 0 100px;
+    font-style: normal;
+}
+
+#menubottom ul li {
+    display: block;
+    float: left;
+    padding: 11px 1px;
+}
+
+#menubottom ul li a {
+    display: block;
+    float: left;
+    padding: 0 100px;
+    font: 20px/33px Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: White;
+}
+
+#menubottom ul li a.active, #menubottom ul li a:hover {
+    text-decoration: none;
+    background: #145986 url(menu_over.gif) repeat-x;
+}
+
+.spacer {
+    height: 60px;
+}
+
+.clearing {
+    clear: both;
+    height: 1px;
+    overflow: hidden;
+}
+
+#footer {
+    clear: both;
+    height: 1%;
+}
+
+#footer p {
+    padding: 60px 0 30px 0;
+    text-align: center;
+}
+
+.button{
+    /*padding-top: 20px;*/
+    border:1px solid #CCCCCC;-webkit-box-shadow: #FEFFFF 0px 1px 1px ;-moz-box-shadow: #FEFFFF 0px 1px 1px ; box-shadow: #FEFFFF 0px 1px 1px ; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:14px;font-family:arial, helvetica, sans-serif; padding: 10px 10px 10px 10px; text-decoration:none; display:inline-block;text-shadow: 0px 1px 0 rgba(255,255,255,1);font-weight:bold; color: #4A4A4A;
+    background-color: #F7F5F6; background-image: -webkit-gradient(linear, left top, left bottom, from(#F7F5F6), to(#DDDDDD));
+    background-image: -webkit-linear-gradient(top, #F7F5F6, #DDDDDD);
+    background-image: -moz-linear-gradient(top, #F7F5F6, #DDDDDD);
+    background-image: -ms-linear-gradient(top, #F7F5F6, #DDDDDD);
+    background-image: -o-linear-gradient(top, #F7F5F6, #DDDDDD);
+    background-image: linear-gradient(to bottom, #F7F5F6, #DDDDDD);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#F7F5F6, endColorstr=#DDDDDD);
+}
+
+.button:hover{
+    border:1px solid #ADADAD;
+    background-color: #E0E0E0; background-image: -webkit-gradient(linear, left top, left bottom, from(#E0E0E0), to(#BDBBBC));
+    background-image: -webkit-linear-gradient(top, #E0E0E0, #BDBBBC);
+    background-image: -moz-linear-gradient(top, #E0E0E0, #BDBBBC);
+    background-image: -ms-linear-gradient(top, #E0E0E0, #BDBBBC);
+    background-image: -o-linear-gradient(top, #E0E0E0, #BDBBBC);
+    background-image: linear-gradient(to bottom, #E0E0E0, #BDBBBC);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#E0E0E0, endColorstr=#BDBBBC);
+}
+
+.inputForm label.non {
+    display: inline !important;
+}
+
+.inputFormTable td {
+    vertical-align: top;
+    padding: 10px;
+}/*
+
+#nestedExampleTree {
+        width: 300px;
+}
+
+#feedbackPanel {
+        width: 600px;
+}
+
+#siteSelection {
+        width: 200px;
+}
+
+div.tabRowContent {
+        border-color: #DDDDDD;
+        border-style: solid;
+        border-width: 1px;
+        margin: 4px;
+        padding: 4px;
+}
+*/
+table.table{
+    width: 610px;
+}
+
+table.dataview {
+
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-family: arial;
+    border-spacing: 3px ;
+}
+
+
+
+table.dataview caption {
+    text-align: left;
+}
+
+table.dataview tr {
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+}
+
+div.calheader {
+    color: black;
+}
+
+span.criteria {
+    display: inline-block;
+    max-width: 100%;
+    background-color: #ffebcd;
+    padding: 0px 5px 5px 0px;
+    border: 4px solid #FDFDEE;
+}
+
+
+div.envType {
+    visibility: hidden;
+}
+
+div.mainPage {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    font-family: "Times New Roman", Times, serif;
+}
+
+div.modalPage {
+    color: #000000;
+    font-family: "Times New Roman", Times, serif;
+    background-color: #FDFDEE;
+    padding: 10px 10px 10px 10px;
+
+}
+
+
+div.modalPageLink {
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+table.dataview tr.even {
+    background-color: #ffdead;
+
+}
+
+table.dataview tr:hover.even {
+    background-color: #ccf2fd;
+}
+
+table.dataview tr.odd {
+    background-color:  #fde9cc;
+}
+
+table.dataview tr:hover.odd {
+    background-color: #ccf2fd;
+}
+
+table.dataview tr td {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+table.dataview tr th {
+    color: black;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: #c1e4ff;
+    /*	border-bottom: 1px solid #0079d6;
+            border-top: 1px solid #0079d6;*/
+    text-align: left;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+table.dataview tr th {
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+table.dataview tr th.wicket_orderDown {
+    background-color: #FDFDEE;
+    /*background-color: #87cbff;*/
+    /*background-image: url(arrow_down.png);*/
+}
+
+table.dataview tr th.wicket_orderUp {
+    /*background-color: #87cbff;*/
+    background-color: #FDFDEE;
+    /*background-image: url(arrow_up.png);*/
+}
+
+table.dataview tr th.wicket_orderNone {
+    background-image: url(arrow_off.png);
+}
+
+table.dataview tr th a {
+    font-weight: normal;
+}
+
+table.dataview #message {
+    padding-left: 3px;
+}
+
+table.dataview caption {
+    padding-bottom: 2px;
+}
+
+/* TAB PANEL STYLES */
+
+div.tabpanel div.tab-row {
+    float: left;
+    width: 100%;
+    background: #DAE0D2 url("tabs/bg.gif") repeat-x bottom;
+    line-height: normal;
+}
+
+div.tabpanel div.tab-row ul {
+    margin: 0;
+    padding: 10px 10px 0;
+    list-style: none;
+}
+
+div.tabpanel div.tab-row li {
+    float: left;
+    background: url("tabs/left.gif") no-repeat left top;
+    margin: 0;
+    padding: 0 0 0 9px;
+}
+
+div.tabpanel div.tab-row a {
+    display: block;
+    background: url("tabs/right.gif") no-repeat right top;
+    padding: 5px 15px 4px 6px;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #eee;
+}
+
+div.tab-panel {
+    clear: left;
+}
+
+div.tabpanel div.tab-row a:hover {
+    color: #fff;
+}
+
+div.tabpanel div.tab-row li.selected {
+    background-image: url("tabs/left_on.gif");
+}
+
+div.tabpanel div.tab-row li.selected a {
+    background-image: url("tabs/right_on.gif");
+    color: #333;
+    padding-bottom: 5px;
+}
+
+/* VARIATION 1 TAB PANEL STYLES */
+
+div.tabpanel1 div.tab-row {
+    float: left;
+    width: 100%;
+    background: #DAE0D2 url("tabs1/bg.gif") repeat-x bottom;
+    line-height: normal;
+}
+
+div.tabpanel1 div.tab-row ul {
+    margin: 0;
+    padding: 10px 10px 0;
+    list-style: none;
+}
+
+div.tabpanel1 div.tab-row li {
+    float: left;
+    background: url("tabs1/left.gif") no-repeat left top;
+    margin: 0;
+    padding: 0 0 0 9px;
+}
+
+div.tabpanel1 div.tab-row a {
+    display: block;
+    background: url("tabs1/right.gif") no-repeat right top;
+    padding: 5px 15px 4px 6px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #765;
+    white-space: nowrap;
+}
+
+div.tabpanel1 div.tab-row a:hover {
+    color: #333;
+}
+
+div.tabpanel1 div.tab-row li.selected {
+    background-image: url("tabs1/left_on.gif");
+}
+
+div.tabpanel1 div.tab-row li.selected a {
+    background-image: url("tabs1/right_on.gif");
+    color: #333;
+    padding-bottom: 5px;
+}
+
+/* TABBED PANEL VARIATION 2 */
+
+div.tabpanel2 div.tab-row {
+    float: left;
+    width: 100%;
+    background: #369 url("tabs2/bg.gif") repeat-x bottom;
+    font-size: 85%;
+    line-height: normal;
+}
+
+div.tabpanel2 div.tab-row ul {
+    margin: 0;
+    padding: 10px 10px 0;
+    list-style: none;
+}
+
+div.tabpanel2 div.tab-row li {
+    float: left;
+    background: url("tabs2/right.gif") no-repeat right top;
+    margin: 0;
+    padding: 0 5px 0 0;
+}
+
+div.tabpanel2 div.tab-row a {
+    float: left;
+    display: block;
+    background: url("tabs2/left.gif") no-repeat left top;
+    padding: 5px 7px 4px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #9cf;
+    white-space: nowrap;
+}
+
+/* Commented Backslash Hack
+   hides rule from IE5-Mac \*/
+
+div.tabpanel2 div.tab-row a {
+    float: none;
+}
+/* End IE5-Mac hack */
+div.tabpanel2 div.tab-row a:hover {
+    color: #fff;
+}
+
+div.tabpanel2 div.tab-row li.selected {
+    background-image: url("tabs2/right_on.gif");
+}
+
+div.tabpanel2 div.tab-row li.selected a {
+    background-image: url("tabs2/left_on.gif");
+    color: #333;
+    padding-bottom: 5px;
+}
+
+/* TABBED PANEL VARIATION 3 */
+div.tabpanel3 div.tab-row {
+    float: left;
+    width: 100%;
+    background: #eee url("tabs3/bg.jpg") repeat-x top;
+    line-height: normal;
+}
+
+div.tabpanel3 div.tab-row ul {
+    margin: 0;
+    padding: 10px 10px 0;
+    list-style: none;
+}
+
+div.tabpanel3 div.tab-row li {
+    float: left;
+    background: url("tabs3/left.gif") no-repeat left top;
+    margin: 0;
+    padding: 0 0 0 28px;
+}
+
+div.tabpanel3 div.tab-row a {
+    float: left;
+    display: block;
+    background: url("tabs3/right.gif") no-repeat right top;
+    padding: 9px 28px 4px 0px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #92A2AC;
+}
+/* Commented Backslash Hack
+   hides rule from IE5-Mac \*/
+div.tabpanel3 div.tab-row a {
+    float: none;
+}
+/* End IE5-Mac hack */
+div.tabpanel3 div.tab-row a:hover {
+    color: #A56060;
+}
+
+div.tabpanel3 div.tab-row li.selected {
+    background-image: url("tabs3/left_on.gif");
+}
+
+div.tabpanel3 div.tab-row li.selected a {
+    background-image: url("tabs3/right_on.gif");
+    color: #A56060;
+}
+
+div.tabpanel4 div.tab-row ul {
+    height: 20px;
+    margin: 0;
+    padding-left: 10px;
+    background: url( tabs4/tab_bottom.gif ) repeat-x bottom;
+}
+
+div.tabpanel4 div.tab-row li {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    list-style-type: none;
+}
+
+div.tabpanel4 div.tab-row a:link,div.tabpanel4 div.tab-row a:visited {
+    float: left;
+    background: #f3f3f3;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: bold;
+    padding: 2px 10px 2px 10px;
+    margin-right: 4px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #666;
+}
+
+div.tabpanel4 div.tab-row li.selected a:link,div.tabpanel4 div.tab-row a:visited.active
+{
+    border-bottom: 1px solid #fff;
+    background: #fff;
+    color: #000;
+}
+
+div.tabpanel4 div.tab-row a:hover {
+    background: #fff;
+}
+
+/* PROGRESS BAR */
+div.wupb-uploadStatus {
+    margin: 5px;
+    color: #aaa;
+}
+
+div.wupb-progressBar {
+    margin: 5px;
+}
+
+div.wupb-progressBar .wupb-border {
+    background: url( progress-remainder.gif ) repeat-x;
+    background-color: #eee;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    width: 100%;
+}
+
+div.wupb-progressBar .wupb-background {
+    background: url( progress-bar.gif ) repeat-x;
+    background-color: #507090;
+    height: 18px;
+    width: 0%;
+}
+/* END PROGRESS BAR */
+table.grid {
+    margin-bottom: 10px;
+    /*border-bottom: 1px solid #0079d6;*/
+    font-size: 1em;
+    font-family: arial;
+    width: 100%;
+}
+
+table.grid tr {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+table.grid tr.odd {
+    background-color: #ffebcd;
+}
+
+table.grid tr.even {
+    background-color: #fff;
+}
+
+table.grid tr td {
+    padding-left: 8px;
+    padding-right: 30px;
+}
+
+/* NAVIGATION */
+
+.navigator{
+    text-align: right;
+}
+
+.navigatorLabel{
+    text-align: left;
+    float: left;
+}
+
+table.grid tr.navigation {
+    text-align: right;
+    font-size: 0.8em;
+}
+
+table.grid tr.navigation td {
+    padding-right: 0px;
+    text-align: right;
+}
+
+/* HEADERS */
+table.grid tr th {
+    font-weight: normal;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 8px;
+    padding-right: 24px;
+    background-color: #c1e4ff;
+    /*	border-bottom: 1px solid #0079d6;
+            border-top: 1px solid #0079d6;*/
+    text-align: right;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+table.grid tr th a {
+    padding-right: 15px;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+table.grid tr th.wicket_orderDown a {
+    color: black;
+    background-image: url(arrow_down.png);
+}
+
+table.grid tr th.wicket_orderUp a {
+    color: black;
+    background-image: url(arrow_up.png);
+}
+
+table.grid tr th.wicket_orderNone a {
+    background-image: url(arrow_off.png);
+}
+
+table.grid tr th a {
+    font-weight: normal;
+}
+
+/* FILTERS */
+table.grid td.filter-td {
+    font-size: 1em;
+    background-color: #c1e4ff;
+    border-bottom: 1px solid #0079d6;
+}
+
+table.grid td.filter-td input.go {
+    width: 45%;
+}
+
+table.grid td.filter-td input.clear {
+    width: 45%;
+}
+
+table.grid td.filter-td input {
+    width: 100%;
+    font-size: 0.6em;
+}
+
+table.grid td.filter-td select {
+    width: 100%;
+    font-size: 0.6em;
+}
+
+tr.section td {
+    padding-top: 0.75em;
+}

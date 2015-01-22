@@ -1,0 +1,309 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>cpublication2</artifactId>
+		<groupId>pl.klimczakowie.java</groupId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>pl.klimczakowie.java.cpublication2</groupId>
+	<artifactId>cpublication2-web</artifactId>
+	<packaging>bundle</packaging>
+	<description>Fuse ESB ${smx.version} Project</description>
+	<name>${project.name} :: ${project.artifactId}</name>
+
+	<developers>
+		<developer>
+			<name>Agnieszka Klimczak</name>
+			<roles>
+				<role>Designer</role>
+				<role>Programmer</role>
+			</roles>
+			<organization>Klimczakowie.pl</organization>
+		</developer>
+	</developers>
+
+	<properties>
+		<bundle.symbolicName>${project.groupId}.${project.artifactId}</bundle.symbolicName>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-core</artifactId>
+			<version>2.7.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-servlet</artifactId>
+			<version>${jetty.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.ops4j.pax.web</groupId>
+			<artifactId>pax-web-jetty</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.ops4j.pax.web</groupId>
+			<artifactId>pax-web-runtime</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>pl.klimczakowie.java.cpublication2</groupId>
+			<artifactId>cpublication2-persistence</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- WICKET -->
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-core</artifactId>
+			<version>${wicket.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-request</artifactId>
+			<version>${wicket.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-ioc</artifactId>
+			<version>${wicket.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-auth-roles</artifactId>
+			<version>${wicket.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-extensions</artifactId>
+			<version>${wicket.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-extensions</artifactId>
+			<version>${wicket.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-datetime</artifactId>
+			<version>${wicket.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+		</dependency>
+
+	</dependencies>
+
+
+	<build>
+		<resources>
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+			</resource>
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<filtering>false</filtering>
+				<directory>src/test/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</testResource>
+		</testResources>
+
+		<plugins>
+			<plugin>
+				<inherited>true</inherited>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<optimise>true</optimise>
+					<debug>true</debug>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<downloadSources>true</downloadSources>
+				</configuration>
+			</plugin>
+
+			<!-- to generate the MANIFEST-FILE required by the bundle -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<executions>
+					<execution>
+						<id>bundle-manifest</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>manifest</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Import-Package>
+							pl.klimczakowie.cpublication2.persistence;version="${project.version}",
+							pl.klimczakowie.cpublication2.model;version="${project.version}",
+
+							javax.servlet,
+							javax.servlet.http,
+							javax.servlet.resources,
+							javax.persistence.criteria,
+							javax.persistence.metamodel,
+
+							org.slf4j,
+
+							org.xml.sax;resolution:=optional,
+							org.w3c.dom;resolution:=optional,
+							org.apache.wicket,
+							org.apache.wicket.request,
+							org.apache.wicket.protocol.http,
+							org.apache.wicket.authroles.authentication,
+							org.apache.wicket.authroles.authorization.strategies.role.annotations,
+							org.apache.wicket.authroles.authorization.strategies.role.metadata,
+							org.apache.wicket.authroles.authorization.strategies.role,
+							org.apache.wicket.authroles.authentication.pages,
+							org.apache.wicket.authorization,
+							org.apache.wicket.application,
+							org.apache.wicket.datetime,
+                            org.apache.wicket.datetime.markup.html.form,
+							org.apache.wicket.markup.html,
+							org.apache.wicket.markup.html.link,
+							org.apache.wicket.markup.html.list,
+							org.apache.wicket.markup.html.basic,
+							org.apache.wicket.markup.repeater.data,
+							org.apache.wicket.markup.repeater,
+							org.apache.wicket.markup.html.panel,
+							org.apache.wicket.markup.html.form,
+							org.apache.wicket.extensions.ajax.markup.html.tabs,
+							org.apache.wicket.extensions.ajax.markup.html,
+							org.apache.wicket.extensions.markup.html.tabs,
+							org.apache.wicket.extensions.ajax.markup.html.modal,
+							org.apache.wicket.extensions.markup.html.repeater.data.table,
+							org.apache.wicket.extensions.ajax.markup.html.repeater.data.table,
+							org.apache.wicket.extensions.markup.html.repeater.util,
+							org.apache.wicket.behavior,
+							org.apache.wicket.model,
+							org.apache.wicket.model.util,
+							org.apache.wicket.ajax,
+							org.apache.wicket.ajax.markup.html,
+							org.apache.wicket.ajax.markup.html.form,
+							org.apache.wicket.ajax.form,
+							org.apache.wicket.util.time,
+							org.apache.wicket.util.value,
+							org.apache.wicket.validation,
+							org.apache.wicket.validation.validator,
+							org.apache.wicket.util.resource,
+							org.apache.wicket.request.cycle,
+							org.apache.wicket.request.resource,
+							org.apache.wicket.request.handler.resource,
+							org.apache.wicket.request.http,
+							org.apache.wicket.request.mapper.parameter,
+							org.apache.wicket.protocol.https,
+							org.apache.wicket.markup.html.pages,
+							org.apache.wicket.markup.html.form.upload,
+							org.apache.wicket.extensions.markup.html.repeater.data.sort,
+							org.apache.wicket.extensions.markup.html.form.select,
+							org.apache.wicket.extensions.markup.html.form,
+							org.apache.wicket.extensions.yui.calendar,
+							org.apache.wicket.markup,
+							org.apache.wicket.authroles.authentication.panel,
+							org.apache.wicket.event,
+							org.apache.wicket.util,
+							org.apache.wicket.util.lang,
+							org.apache.wicket.settings,
+							org.apache.wicket.page,
+							org.apache.wicket.injection,
+							org.apache.wicket.session,
+							org.apache.wicket.util.file,
+							org.apache.wicket.core.request.mapper,
+							org.apache.wicket.util.io,
+							org.apache.wicket.ajax.attributes,
+							org.apache.wicket.markup.head,
+							org.apache.wicket.markup.html.form.validation,
+							org.apache.wicket.util.convert,
+							org.apache.wicket.util.upload,
+							org.apache.commons.logging,
+							org.apache.wicket.markup.html.image,
+
+							javax.persistence,
+							javax.transaction,
+
+							org.apache.aries.blueprint,
+							org.apache.aries.blueprint.ext,
+
+							org.ops4j.pax.web.service,
+							org.ops4j.pax.wicket.util.proxy,
+							org.ops4j.pax.wicket.spi,
+
+							javax.naming.spi,
+							javax.naming.directory,
+							javax.naming.ldap,
+							javax.naming,
+
+							javax.net.ssl,
+							javax.net,
+							javax.security.auth.login,
+							javax.security.auth.callback,
+
+							org.aopalliance.aop,
+
+							org.osgi.framework,
+							org.osgi.service.blueprint,
+
+							org.joda.time,
+							org.joda.time.format,
+
+							net.sf.cglib.proxy,
+							net.sf.cglib.core,
+							net.sf.cglib.reflect,
+
+							javax.inject,
+
+						</Import-Package>
+						<Private-Package>pl.klimczakowie.cpublication2.web.*</Private-Package>
+					</instructions>
+				</configuration>
+
+			</plugin>
+		</plugins>
+	</build>
+</project>

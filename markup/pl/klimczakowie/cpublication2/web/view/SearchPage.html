@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wicket:extend xmlns:wicket="http://wicket.apache.org">
+    <h4 align="center">Search Form</h4>
+
+    <form wicket:id="inputForm">
+        <table>
+            <tr>
+                <td colspan="2">Please use "%" as a wildcard.</td>
+            </tr>
+            <tr>
+                <td>Company name:</td>
+                <td><input wicket:id="name" id="name" type="text" size="60" /></td>
+            </tr>
+            <tr>
+                <td>Country:</td>
+                <td><select wicket:id="country"></select></td>
+            </tr>
+            <tr>
+                <td>Post code:</td>
+                <td><input wicket:id="postCode" id="postCode" type="text"
+                           size="8" /></td>
+            </tr>
+        </table>
+        <div id="feedbackPanel">
+            <span wicket:id="feedback" />
+        </div>
+        <table>
+
+            <tr>
+                <td colspan="2">
+
+                    <button class="button" type="submit" wicket:id="searchButton">Search</button>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+
+</wicket:extend>

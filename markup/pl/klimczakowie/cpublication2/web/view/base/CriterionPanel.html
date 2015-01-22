@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wicket:extend xmlns:wicket="http://wicket.apache.org">
+<div class="modalPage">
+	<table class="dataview">
+	    <tr>
+		<td>
+		    <H4><strong>Search criterion</strong></H4>
+		</td>
+	    </tr>
+	</table>
+	<br />
+	
+	<form wicket:id="inputForm" class="inputForm">
+		<p>
+			<table class="dataview">
+				<tr>
+					<td>Column</td>
+					<td><select wicket:id="column"></select></td>
+				</tr>
+				<tr>
+					<td>Criterion type</td>
+					<td><select wicket:id="type"></select></td>
+				</tr>
+				<tr>
+					<td>Value (For LIKE % is a wildcard)</td>
+					<td>
+					<input wicket:id="stringValue" type="text" size="30"/>
+					<select wicket:id="choiceValue" ></select>
+					<input wicket:id="dateValue" />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><br /></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button class="button" type="button" wicket:id="abortButton">Cancel</button>
+						<button class="button" type="submit" wicket:id="saveButton">Add criterion</button>
+					</td>
+				</tr>
+			</table>
+		</p>
+	</form>
+	<div id="feedbackPanel">
+		<span wicket:id="feedback" />
+	</div>
+</div>
+</wicket:extend>

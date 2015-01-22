@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wicket:extend xmlns:wicket="http://wicket.apache.org">
+    <style type="text/css">
+        th.highlined *,td.highlined {
+            font-weight: bold;
+            color: #AA0000;
+        }
+
+        th.numeric,td.numeric {
+            text-align: right !important;
+        }
+    </style>
+
+    <table class="table">
+        <tr>
+            <td align="left" valign="middle"><div class="modalPageLink" wicket:id="addCriterion"/></td>
+
+            <td align="right" valign="middle"><wicket:child/></td>
+        </tr>
+    </table>	
+    <div wicket:id="criteriaWMC">
+        <span class="criteria" wicket:id="criterionList"> <b><span
+                    wicket:id="displayName" /></b> <span wicket:id="type" /> <a
+                title="Click to edit"><span wicket:id="stringValue" /></a> 
+            <img wicket:id="pencil" class="imgPencil" title="Click on criteria value to edit" src="internal/pencil.png" />
+            <strong><a href="#"
+                       wicket:id="remove">&nbsp;X&nbsp;</a></strong>
+        </span>
+    </div>
+
+    <br />
+    <br />
+
+    <table cellspacing="0" class="dataview" wicket:id="table">
+    </table>
+</wicket:extend>
